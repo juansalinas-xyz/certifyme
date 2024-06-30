@@ -1,121 +1,28 @@
-.luzCeleste1, .luzCeleste2 {
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite
+  }
+  .loader::before {
+    content: "";
+    box-sizing: border-box;
     position: absolute;
-    width: 950px;
-    height: 950px;
-    flex-shrink: 0;
-    border-radius: 950px;
-    background: radial-gradient(50% 50% at 50% 50%, #009187 0%, rgba(14, 14, 14, 0.00) 100%);
-    -webkit-animation: vibrateHorizontal 12s linear infinite both;
-    animation: vibrateHorizontal 12s linear infinite both;
-    filter: blur(150px);
-}
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    animation: prixClipFix 2s linear infinite ;
+  }
 
-.luzAzul1, .luzAzul2 {
-    position: absolute;
-    width: 950px;
-    height: 950px;
-    flex-shrink: 0;
-    border-radius: 950px;
-    background: radial-gradient(50% 50% at 50% 50%, #1C248B 0%, rgba(14, 14, 14, 0.00) 100%);
-    -webkit-animation: vibrateVertical 12s linear infinite both;
-    animation: vibrateVertical 12s linear infinite both;
-    filter: blur(150px);
-}
+  @keyframes rotate {
+    100%   {transform: rotate(360deg)}
+  }
 
-.luzCeleste1 {
-    right: 72%;
-    bottom: 65%;
-}
-
-.luzAzul1 {
-    right: 80%;
-    top: -1%;
-}
-
-.luzCeleste2 {
-    left: 65%;
-    top: 70%;
-}
-
-.luzAzul2 {
-    left: 87%;
-    bottom: 40%;
-}
-
-/* Animación vibrateHorizontal en forma de "infinito" horizontal */
-@-webkit-keyframes vibrateHorizontal {
-    0%, 100% {
-        -webkit-transform: translate(0, 0) rotate(0deg);
-                transform: translate(0, 0) rotate(0deg);
-    }
-    25% {
-        -webkit-transform: translate(60px, -30px) rotate(45deg);
-                transform: translate(60px, -30px) rotate(45deg);
-    }
-    50% {
-        -webkit-transform: translate(120px, 0) rotate(0deg);
-                transform: translate(120px, 0) rotate(0deg);
-    }
-    75% {
-        -webkit-transform: translate(60px, 30px) rotate(-45deg);
-                transform: translate(60px, 30px) rotate(-45deg);
-    }
-}
-
-@keyframes vibrateHorizontal {
-    0%, 100% {
-        -webkit-transform: translate(0, 0) rotate(0deg);
-                transform: translate(0, 0) rotate(0deg);
-    }
-    25% {
-        -webkit-transform: translate(60px, -30px) rotate(45deg);
-                transform: translate(60px, -30px) rotate(45deg);
-    }
-    50% {
-        -webkit-transform: translate(120px, 0) rotate(0deg);
-                transform: translate(120px, 0) rotate(0deg);
-    }
-    75% {
-        -webkit-transform: translate(60px, 30px) rotate(-45deg);
-                transform: translate(60px, 30px) rotate(-45deg);
-    }
-}
-
-/* Animación vibrateVertical en forma de "infinito" vertical */
-@-webkit-keyframes vibrateVertical {
-    0%, 100% {
-        -webkit-transform: translate(0, 0) rotate(0deg);
-                transform: translate(0, 0) rotate(0deg);
-    }
-    25% {
-        -webkit-transform: translate(30px, 60px) rotate(45deg);
-                transform: translate(30px, 60px) rotate(45deg);
-    }
-    50% {
-        -webkit-transform: translate(0, 120px) rotate(0deg);
-                transform: translate(0, 120px) rotate(0deg);
-    }
-    75% {
-        -webkit-transform: translate(-30px, 60px) rotate(-45deg);
-                transform: translate(-30px, 60px) rotate(-45deg);
-    }
-}
-
-@keyframes vibrateVertical {
-    0%, 100% {
-        -webkit-transform: translate(0, 0) rotate(0deg);
-                transform: translate(0, 0) rotate(0deg);
-    }
-    25% {
-        -webkit-transform: translate(30px, 60px) rotate(45deg);
-                transform: translate(30px, 60px) rotate(45deg);
-    }
-    50% {
-        -webkit-transform: translate(0, 120px) rotate(0deg);
-                transform: translate(0, 120px) rotate(0deg);
-    }
-    75% {
-        -webkit-transform: translate(-30px, 60px) rotate(-45deg);
-                transform: translate(-30px, 60px) rotate(-45deg);
-    }
-}
+  @keyframes prixClipFix {
+      0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+      25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+      75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+      100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+  }

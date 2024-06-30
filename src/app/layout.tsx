@@ -9,7 +9,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Certify",
+  title: "Tokenizer",
   description: "Digitaliza y protege tus certificados en blockchain",
 };
 
@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="overflow-hidden">
+    <html lang="en" className="overflow-x-hidden bg-customBlackBackground">
       <body className={montserrat.className}>{children}</body>
     </html>
   );
