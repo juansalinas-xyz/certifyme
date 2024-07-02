@@ -4,39 +4,46 @@ import Link from "next/link";
 import FadeInSection from "@/app/SharedComponents/FadeInSection/FadeInSection";
 
 interface CertificadoProps {
-    title: string;
-    description: string;
-    logoInstitucion: string;
-    linkBlockchain: string;
-    certificado: string;
-    urlLinkedin: string;
+  title: string;
+  description: string;
+  logoInstitucion: string;
+  linkBlockchain: string;
+  certificado: string;
+  urlLinkedin: string;
 }
 
-function Certificado({ title, description, logoInstitucion, linkBlockchain, certificado, urlLinkedin }: CertificadoProps) {
+function Certificado({
+  title,
+  description,
+  logoInstitucion,
+  linkBlockchain,
+  certificado,
+  urlLinkedin,
+}: CertificadoProps) {
   return (
     <div className="w-full lg:w-auto lg:h-full flex flex-col justify-center items-center lg:items-start gap-7 lg:gap-5">
       <FadeInSection>
-      <div className="w-full flex justify-center lg:justify-start items-center">
-        <Image
-          src={certificado}
-          alt={""}
-          height={526}
-          width={741}
-          className="w-[85%] lg:w-[100%]"
-          priority
-        />
-      </div>
+        <div className="w-full flex justify-center lg:justify-start items-center">
+          <Image
+            src={certificado}
+            alt={""}
+            height={526}
+            width={741}
+            className="w-[85%] lg:w-[100%]"
+            priority
+          />
+        </div>
       </FadeInSection>
       <div className="w-full flex flex-row justify-center gap-1.5 -mt-1 lg:-mt-0">
         <p className="text-white text-center text-[10px] md:text-sm font-normal">
-          <FadeInSection>
-            Verificación:{" "}
-          </FadeInSection>
+          <FadeInSection>Verificación: </FadeInSection>
         </p>
-        <Link href={linkBlockchain} target="_blank" className="text-white text-center text-[10px] md:text-sm font-medium hover:underline">
-          <FadeInSection>
-            {linkBlockchain}
-          </FadeInSection>
+        <Link
+          href={linkBlockchain}
+          target="_blank"
+          className="text-white text-center text-[10px] md:text-sm font-medium hover:underline"
+        >
+          <FadeInSection>{linkBlockchain}</FadeInSection>
         </Link>
       </div>
       <FadeInSection>

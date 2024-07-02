@@ -42,6 +42,7 @@ function Certificate() {
   let UrlLinkedin: string = "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Nombre-de-ejemplo&organizationId=2024&issueYear=2023&issueMonth=6&expirationYear=2026&expirationMonth=8&certUrl=https://allo.info/asset/1794400153/nft&certId= 1";
 
   useEffect(() => {
+    // Agregar url al endpoint aca
     const apiUrl = "";
 
     const fetchData = async () => {
@@ -49,7 +50,7 @@ function Certificate() {
         const response = await axios.get<CertificateData>(apiUrl);
         setData(response.data);
         setLoading(false);
-        UrlLinkedin = `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${data?.title}&organizationId=${data?.organizationId}&issueYear=${data?.yearOfIssue}&issueMonth=${data?.monthOfIssue}&expirationYear=${data?.expirationYear}&expirationMonth=${data?.expirationMonth}&certUrl=${data?.linkBlockchain}&certId=${data?.certId}`;
+        UrlLinkedin = constructLinkedInUrl(response.data);
       } catch (error) {
         setError(error as Error);
         setLoading(false);
@@ -58,6 +59,23 @@ function Certificate() {
 
     fetchData();
   }, []);
+
+  function constructLinkedInUrl(certificationData: CertificateData) {
+    const baseUrl = 'https://www.linkedin.com/profile/add';
+    const params = new URLSearchParams({
+      startTask: 'CERTIFICATION_NAME',
+      name: certificationData.title,
+      organizationId: certificationData.organizationId,
+      issueYear: certificationData.yearOfIssue.toString(),
+      issueMonth: certificationData.monthOfIssue.toString(),
+      expirationYear: certificationData.expirationYear.toString(),
+      expirationMonth: certificationData.expirationMonth.toString(),
+      certUrl: certificationData.certificado,
+      certId: certificationData.linkBlockchain
+    });
+  
+    return `${baseUrl}?${params.toString()}`;
+  }
 
   if (loading) return <div className="absolute w-screen h-screen flex justify-center items-center overflow-hidden"><Fondo /><div className={styles.loader}></div></div>
   if (error) return <div>Error: {error.message}</div>
