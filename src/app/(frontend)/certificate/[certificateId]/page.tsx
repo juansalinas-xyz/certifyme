@@ -46,7 +46,6 @@ function Certificate({params}: {params: {certificateId: string}}) {
   let expirationDate!: string;
 
   useEffect(() => {    
-    // Agregar url al endpoint aca
     const apiUrl = `/api/certifications/${params.certificateId}`;
 
     const fetchData = async () => {
