@@ -55,7 +55,7 @@ function Certificate({params}: {params: {certificateId: string}}) {
           setTimeout(() => {
             setLoading(false);
           }, 1000);
-          console.log("DATA DEL ENDPOINT: ", data)
+          console.log("DATA DEL ENDPOINT: ", response.data)
           // UrlLinkedin = constructLinkedInUrl(response.data);
           expirationDate = data?.expirationMonth + "/" + data?.expirationYear;
         });
