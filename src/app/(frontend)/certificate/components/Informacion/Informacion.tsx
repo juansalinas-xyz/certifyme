@@ -2,11 +2,14 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import FadeInSection from "@/app/SharedComponents/FadeInSection/FadeInSection";
+import BotonDrive from "@/app/SharedComponents/BotonDrive/BotonDrive";
+import BotonLinkedin from "@/app/SharedComponents/BotonLinkedin/BotonLinkedin";
 
 interface CertificadoProps {
   title: string;
   description: string;
   logoInstitucion: string;
+  institucionName: string;
   linkBlockchain: string;
   certificado: string;
   urlLinkedin: string;
@@ -16,13 +19,14 @@ function Informacion({
   title,
   description,
   logoInstitucion,
+  institucionName,
   linkBlockchain,
   certificado,
   urlLinkedin,
 }: CertificadoProps) {
   return (
     <FadeInSection>
-      <div className="lg:w-auto h-full lg:h-full flex flex-col justify-center items-center gap-5 lg:gap-[30px] lg:mb-0 mb-3">
+      <div className="lg:w-auto h-full lg:h-auto flex flex-col justify-center items-center gap-5 lg:gap-[30px] lg:mb-0 mb-3 mt-5 md:mt-0">
         {/* LOGO EMPRESA QUE EMITE EL CERTIFICADO (Pantallas Grandes) */}
         <div className="hidden w-[80px] h-[80px] rounded-full bg-white lg:flex justify-center items-center overflow-hidden">
           <Image
@@ -77,21 +81,16 @@ function Informacion({
             {description}
           </p>
         </div>
+        {/* NOMBRE DE LA EMPRESA EMISORA */}
+        <div className="flex justify-center items-center">
+          <p className="text-white text-center font-medium text-[14px] md:text-base lg:text-[16px] leading-[22px]">
+            Otorgado por {institucionName}
+          </p> 
+        </div>
         {/* BOTON COMPARTIR EN LINKEDIN */}
-        <Link href={urlLinkedin} target="_blank" className="lg:block hidden">
-          <div className="group inline-flex h-12 shrink-0 justify-center items-center px-6 py-3 bg-customBlueLinkedin shadow-xl rounded-[40px] gap-2 cursor-pointer hover:shadow-none transition-all duration-500">
-            <Image
-              src={"/certificate/linkedin.svg"}
-              alt={""}
-              width={27}
-              height={27}
-              className="group-hover:translate-x-[110px] group-hover:drop-shadow-xl transition-all duration-500"
-            />
-            <p className="text-white text-center font-medium text-sm group-hover:opacity-0 group-hover:invisible transition-all duration-200">
-              Añadir a tu perfil de LinkedIn
-            </p>
-          </div>
-        </Link>
+        <BotonLinkedin screenSize={"large"} url={urlLinkedin} />
+        {/* BOTON COMPARTIR EN GOOGLE DRIVE */}
+        <BotonDrive screenSize={"large"} url={urlLinkedin} /> {/* --------- Cambiar por url de DRIVE --------- */}
       </div>
     </FadeInSection>
   );
