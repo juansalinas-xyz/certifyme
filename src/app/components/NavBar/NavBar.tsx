@@ -68,9 +68,9 @@ function NavBar() {
         
       </div>
       <div className="hidden right-0 mr-20 md:flex justify-center gap-2.5 z-50">
-        <Image src={"/home/linkedin.png"} alt={""} height={30} width={30} className="cursor-pointer drop-shadow-xl" />
-        <Image src={"/home/whatsapp.png"} alt={""} height={30} width={30} className="cursor-pointer drop-shadow-xl" />
-        <Image src={"/home/telegram.png"} alt={""} height={30} width={30} className="cursor-pointer drop-shadow-xl" />
+        <Image src={"/home/linkedin.png"} alt={""} height={30} width={30} className="cursor-pointer filter hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-300" />
+        <Image src={"/home/whatsapp.png"} alt={""} height={30} width={30} className="cursor-pointer filter hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-300" />
+        <Image src={"/home/telegram.png"} alt={""} height={30} width={30} className="cursor-pointer filter hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-300" />
       </div>
     </div>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 
 function Porque() {
   return (
-    <div id='acercade' className='w-4/5 h-auto flex flex-col justify-start items-center text-white gap-12 pt-[40px] z-50'>
+    <div id='acercade' className='hidden w-4/5 h-auto md:flex flex-col justify-start items-center text-white gap-12 pt-[40px] z-50'>
         <div className='w-[375px] h-[92px]'>
             <h2 className='font-bold text-center text-5xl'>¿Por qué usar Tokenizer?</h2>
         </div>
