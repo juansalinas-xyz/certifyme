@@ -1,16 +1,24 @@
 import React from 'react'
-import Image from "next/image";
+import ContactForm from '../ContactForm/ContactForm';
+import ContactMedium from '../ContactMedium/ContactMedium';
 
 function Contacto() {
   return (
-    <div id='contacto' className='hidden mt-[190px] w-full md:flex flex-col items-center gap-16 text-white pt-[40px] z-50'>
-      <h2 className='text-4xl font-semibold text-white text-center'>Contactanos</h2>
-      <div className='mt-2 flex flex-row gap-10'>
-        <Image src={"/home/whatsapp.png"} alt={""} height={40} width={40} className="cursor-pointer filter hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] hover:scale-110 transition-all duration-300" />
-        <Image src={"/home/telegram.png"} alt={""} height={40} width={40} className="cursor-pointer filter hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] hover:scale-110 transition-all duration-300" />
-        <Image src={"/home/correo.png"} alt={""} height={40} width={40} className="cursor-pointer filter hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] hover:scale-110 transition-all duration-300" />
+    <div id='contacto' className='hidden mt-[190px] w-[90%] md:flex flex-col items-center gap-5 text-white pt-[40px] z-50 bg-white/10 backdrop-blur-lg rounded-[24px] pb-14'>
+      <p className='text-base font-normal text-center text-customCeleste'>Lleva tus certificados al siguiente nivel</p>
+      <h2 className='text-4xl font-semibold text-white text-center'>Contáctanos</h2>
+      <div className='w-1/2 flex flex-row justify-center items-center gap-10 text-white mt-24'>
+        <ContactForm />
+        <p className='text-base font-light'>Ó</p>
+        <div className='mt-2 flex flex-col gap-10'>
+          {/* WhatsApp */}
+          <ContactMedium iconPath={'/home/whatsapp.png'} text={'Envianos un WhatsApp'} />
+          {/* Telegram */}
+          <ContactMedium iconPath={'/home/telegram.png'} text={'Contáctanos por Telegram'} />
+          {/* Correo */}
+          <ContactMedium iconPath={'/home/correo.png'} text={'Envianos un correo personalizado'} />
+        </div>
       </div>
-      <p className='text-base font-light'>O</p>
     </div>
   )
 }

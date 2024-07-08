@@ -2,7 +2,7 @@ import React from 'react'
 
 function Como() {
   return (
-    <div id='como' className='mt-[190px] w-[723px] flex flex-col items-center gap-[88px] text-white pt-[40px] z-50'>
+    <div id='como' className='hidden mt-[190px] w-[723px] lg:flex flex-col items-center gap-[88px] text-white pt-[40px] z-50'>
          <h2 className='font-bold text-center text-5xl'>Cómo potenciar tu certificado con blockchain</h2>
          <div className='flex flex-col items-center gap-[30px]'>
                 <div className='group w-[600px] flex flex-row items-center gap-5'>
