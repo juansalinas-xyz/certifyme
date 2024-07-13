@@ -26,7 +26,7 @@
 }
 
 .luzCeleste1, .luzCeleste2, .luzAzul3, .luzCeleste4 {
-  background: radial-gradient(50% 50% at 50% 50%, #009187 0%, rgba(14, 14, 14, 0.00) 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #333940 0%, rgba(14, 14, 14, 0.00) 100%);
 }
 
 .luzAzul1, .luzAzul2, .luzCeleste3, .luzAzul4 {
@@ -159,3 +159,8 @@
 .custom-drop-shadow {
   filter: drop-shadow0 (4px 6px  rgba(0,201,189,0.5));
 }
+
+
+
+
+

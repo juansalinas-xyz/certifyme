@@ -4,10 +4,9 @@ import ContactMedium from '../ContactMedium/ContactMedium';
 
 function Contacto() {
   return (
-    <div id='contacto' className='hidden mt-[190px] w-[90%] md:flex flex-col items-center gap-5 text-white pt-[40px] z-50 bg-white/10 backdrop-blur-lg rounded-[24px] pb-14'>
-      <p className='text-base font-normal text-center text-customCeleste'>Lleva tus certificados al siguiente nivel</p>
+    <div id='contacto' className='hidden mt-[190px] w-[90%] md:flex flex-col items-center gap-5 text-white pt-[40px] z-50 rounded-[24px] pb-14'>
       <h2 className='text-4xl font-semibold text-white text-center'>Contáctanos</h2>
-      <div className='w-1/2 flex flex-row justify-center items-center gap-10 text-white mt-24'>
+      <div className='w-2/3 flex flex-row justify-center items-center gap-12 text-white mt-10'>
         <ContactForm />
         <p className='text-base font-light'>Ó</p>
         <div className='mt-2 flex flex-col gap-10'>
