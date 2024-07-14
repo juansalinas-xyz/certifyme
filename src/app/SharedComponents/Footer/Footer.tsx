@@ -3,7 +3,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="hidden mt-8 lg:mt-[140px] mb-14 md:flex flex-col justify-center items-center gap-4">
+    <div className="hidden mb-14 md:flex flex-col justify-center items-center gap-4 -mt-14">
       <div className="flex flex-row gap-3">
         <p className='text-white text-lg font-semibold'>Tokenizer</p>
         <img src="/home/protected.png" alt="" className='h-6 w-auto' />
