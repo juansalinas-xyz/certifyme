@@ -9,10 +9,10 @@ function Footer() {
         <img src="/home/protected.png" alt="" className='h-6 w-auto' />
       </div>
       <div className="flex flex-col md:flex-row justify-center text-white gap-1.5">
-        <p className="text-sm font-light text-center">
+        <p className="text-xs md:text-sm font-light text-center">
           © 2024 Tokenizer, todos los derechos reservados.
         </p>
-        <p className="text-sm font-light text-center">
+        <p className="text-xs md:text-sm font-light text-center">
           Designed by{" "}
           <Link
             href={"https://www.linkedin.com/in/ivanrudiferia/"}

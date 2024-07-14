@@ -31,7 +31,7 @@ function Inicio() {
               className="w-[80vw] h-auto filter hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-300"
             />
           </div>
-          <p className="w-[90vw] lg:w-auto text-center lg:text-start text-[15px] lg:text-lg font-normal leading-normal">Garantiza la inmutabilidad y seguridad de tus certificados mediante tecnología blockchain.</p>
+          <p className="w-[90vw] lg:w-auto text-center lg:text-start text-[15px] lg:text-lg font-normal leading-normal z-[1005]">Garantiza la inmutabilidad y seguridad de tus certificados mediante tecnología blockchain.</p>
           <div className='flex w-full justify-center'>
             <button onClick={() => scrollToElement('contacto', 100)} className="hidden lg:flex w-[146px] lg:w-[139px] h-[47px] lg:h-[36px] rounded-[40px] lg:py-[17px] lg:px-[10px] justify-center items-center bg-transparent border-2 border-customCeleste text-sm lg:text-sm z-[1005] font-bold text-white hover:scale-[1.02] hover:shadow-[0_0_10px_5px_rgba(0,201,189,0.5)] hover:bg-customCeleste hover:text-white transition-all duration-300">Comienza Ya</button>
           </div>
