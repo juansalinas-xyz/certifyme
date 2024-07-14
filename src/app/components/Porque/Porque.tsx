@@ -28,7 +28,7 @@ function Porque() {
     };
 
   return (
-    <div id='acercade' className='w-full h-auto flex justify-center items-center mt-11 max-h-screen'>
+    <div id='acercade' className='w-full h-auto flex justify-center items-center mt-11 lg:max-h-screen'>
         <FadeInSection>
             <div className='hidden w-full h-auto lg:flex flex-col justify-center items-center text-white gap-32 z-50'>
                 <div className='w-auto h-[92px]'>
