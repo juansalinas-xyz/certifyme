@@ -16,7 +16,7 @@ export default function Home() {
           <Fondo screen="landing" />
         </div>
 
-        <div className="w-screen min-h-screen flex flex-col flex-wrap gap-12 md:gap-32 items-center z-[2]">
+        <div className="w-screen min-h-screen flex flex-col flex-wrap gap-12 lg:gap-32 items-center z-[2]">
           <Inicio />
           <Porque />
           <Como />

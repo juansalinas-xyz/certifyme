@@ -3,12 +3,12 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="hidden mb-14 md:flex flex-col justify-center items-center gap-4 -mt-14">
+    <div className="mb-14 flex flex-col justify-center items-center gap-4 -mt-7 lg:-mt-14">
       <div className="flex flex-row gap-3">
         <p className='text-white text-lg font-semibold'>Tokenizer</p>
         <img src="/home/protected.png" alt="" className='h-6 w-auto' />
       </div>
-      <div className="flex justify-center text-white gap-1.5">
+      <div className="flex flex-col md:flex-row justify-center text-white gap-1.5">
         <p className="text-sm font-light text-center">
           © 2024 Tokenizer, todos los derechos reservados.
         </p>

@@ -1,9 +1,13 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import BoxReveal from '../BoxReveal/BoxReveal';
 import FadeInSection from 'src/app/SharedComponents/FadeInSection/FadeInSection';
 import PorqueItem from '../PorqueItem/PorqueItem';
 
 function Porque() {
+    const [activeIndex, setActiveIndex] = useState(null);
+    
     const porques = [
         {
             title: "Seguridad blockchain",
@@ -18,6 +22,10 @@ function Porque() {
             text: "Tokenizer te permite anunciar facilmente tus certificados en la seccion de certificaciones de LinkedIn. Ademas podras descargarlos en tu dispositivo para exponerlos donde mas gustes."
         },
     ]
+
+    const handleToggle = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
 
   return (
     <div id='acercade' className='w-full h-auto flex justify-center items-center mt-11 max-h-screen'>
@@ -64,15 +72,21 @@ function Porque() {
             </div>
         </FadeInSection>
         <div className='lg:hidden flex w-full h-auto flex-col items-center justify-start gap-10 text-white px-10'>
-            <BoxReveal>
-                <h2 className='font-medium text-center text-2xl'>¿Por qué usar Tokenizer?</h2>
-            </BoxReveal>
-            <div className='w-full flex flex-col justify-center items-center gap-10 px-12'>
-                {porques.map((item) => (
-                    <PorqueItem title={item.title} text={item.text} />
-                ))}
+                <BoxReveal>
+                    <h2 className='font-medium text-center text-2xl'>¿Por qué usar Tokenizer?</h2>
+                </BoxReveal>
+                <div className='w-full flex flex-col justify-center items-center gap-10 px-12'>
+                    {porques.map((item, index) => (
+                        <PorqueItem 
+                            key={index}
+                            title={item.title} 
+                            text={item.text} 
+                            isActive={activeIndex === index}
+                            onToggle={() => handleToggle(index)}
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
     </div>
   )
 }

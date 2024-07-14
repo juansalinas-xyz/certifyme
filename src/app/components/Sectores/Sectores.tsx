@@ -59,17 +59,17 @@ function Sectores() {
 
   return (
     <div className="h-auto w-full flex justify-center items-center">
-      <div className="h-auto w-4/5 flex flex-col items-center justify-start gap-6 md:gap-20 p-10 text-white">
-        <div className="w-auto h-[92px]">
+      <div className="h-auto md:w-4/5 flex flex-col items-center justify-start gap-9 md:gap-20 p-10 text-white">
+        <div className="w-auto lg:h-[92px]">
           <BoxReveal>
-            <h2 className="font-medium text-center text-2xl md:text-4xl">
+            <h2 className="font-medium text-center text-2xl lg:text-4xl">
               ¿En que sectores se utiliza <b>blockchain</b>?
             </h2>
           </BoxReveal>
         </div>
-        <div className="w-full h-auto flex md:flex-row flex-col justify-between items-stretch gap-6">
+        <div className="w-full h-auto flex lg:flex lg:flex-row flex-col justify-between items-stretch md:items-center lg:items-stretch gap-6">
           {cards.map((card) => (
-            <CardSectores {...card} />
+            <CardSectores key={card.cardNumber} {...card} />
           ))}
         </div>
       </div>

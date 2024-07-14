@@ -20,7 +20,7 @@ function ContactMedium({ iconPath, text }: ContactMediumProps) {
         <div className="absolute inset-0 bg-customCeleste opacity-0 group-hover:opacity-50 rounded-full transition-opacity duration-300 animate-ping"></div>
         <div className="absolute inset-0 bg-customCeleste opacity-0 group-hover:opacity-30 rounded-full transition-all duration-700 group-hover:scale-[2] blur-md"></div>
       </div>
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden lg:block hidden">
         <p className="whitespace-nowrap text-white font-semibold text-lg transition-transform duration-300 group-hover:translate-y-[-100%]">
           {text}
         </p>
