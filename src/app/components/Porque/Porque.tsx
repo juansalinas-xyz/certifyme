@@ -18,7 +18,7 @@ function Porque() {
             text: "Tokenizer ofrece accesibilidad para tus certificados, eliminando los riesgos de pérdida y facilitando su gestión y verificación. No requiere que los ususarios cuenten con conocimiento ni wallets en blockchain, Tokenizer se encarga del proceso técnico."
         },
         {
-            title: "Integracíon y accesibilidad",
+            title: "Integración y accesibilidad",
             text: "Tokenizer te permite anunciar facilmente tus certificados en la seccion de certificaciones de LinkedIn. Ademas podras descargarlos en tu dispositivo para exponerlos donde mas gustes."
         },
     ]
