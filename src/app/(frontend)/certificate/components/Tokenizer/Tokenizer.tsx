@@ -7,7 +7,7 @@ function Tokenizer() {
   return (
     <FadeInSection>
       <div className="h-auto w-full flex flex-col justify-center items-center z-50 gap-10 lg:gap-[54px] pb-[60px] text-white">
-        <div className="w-3/4 h-px rounded-lg bg-zinc-700"></div>
+        <div className="w-3/4 h-px rounded-lg bg-zinc-700 mt-10 lg:mt-0"></div>
         <p className="text-2xl lg:text-4xl font-bold leading-normal text-center">
           ¿Que es TOKENIZER?
         </p>
