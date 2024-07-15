@@ -10,6 +10,7 @@ function Contacto() {
         <h2 className='text-4xl font-semibold text-white text-center'>Contáctanos</h2>
       </BoxReveal>
       <div className='w-full md:w-2/3 h-auto flex flex-col-reverse lg:flex-row justify-center items-center gap-8 lg:gap-12 text-white mt-10'>
+        {/* Contact Form */}
         <div className='w-full h-full flex justify-end items-center'>
           <ContactForm />
         </div>
