@@ -6,12 +6,11 @@ import FadeInSection from 'src/app/SharedComponents/FadeInSection/FadeInSection'
 import PorqueItem from '../PorqueItem/PorqueItem';
 
 function Porque() {
-    const [activeIndex, setActiveIndex] = useState(null);
     
     const porques = [
         {
             title: "Seguridad blockchain",
-            text: "Tokenizer utiliza la tecnología blockchain, conocida por su alta seguridad y resistencia a la manipulación, asegurando que tus certificados estén siempre protegidos."
+            text: "Tokenizer utiliza tecnología blockchain, conocida por su alta seguridad y resistencia a la manipulación, asegurando que tus certificados estén siempre protegidos."
         },
         {
             title: "Facilidad de uso",
@@ -19,13 +18,9 @@ function Porque() {
         },
         {
             title: "Integración y accesibilidad",
-            text: "Tokenizer te permite anunciar facilmente tus certificados en la seccion de certificaciones de LinkedIn. Ademas podras descargarlos en tu dispositivo para exponerlos donde mas gustes."
+            text: "Tokenizer te permite anunciar facilmente tus certificados en la sección de certificaciones de LinkedIn. Ademas podrás descargarlos en tu dispositivo para exponerlos donde mas gustes."
         },
     ]
-
-    const handleToggle = (index) => {
-        setActiveIndex(activeIndex === index ? null : index);
-    };
 
   return (
     <div id='acercade' className='w-full h-auto flex justify-center items-center mt-11 lg:max-h-screen'>
@@ -75,14 +70,12 @@ function Porque() {
                 <BoxReveal>
                     <h2 className='font-medium text-center text-2xl'>¿Por qué usar Tokenizer?</h2>
                 </BoxReveal>
-                <div className='w-full flex flex-col justify-center items-center gap-10 px-12'>
+                <div className='w-full flex flex-col justify-center items-center gap-10'>
                     {porques.map((item, index) => (
                         <PorqueItem 
                             key={index}
                             title={item.title} 
                             text={item.text} 
-                            isActive={activeIndex === index}
-                            onToggle={() => handleToggle(index)}
                         />
                     ))}
                 </div>

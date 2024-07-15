@@ -15,7 +15,7 @@ function CardSectores({cardNumber, icon, title, items}: CardProps) {
     return (
         <div
             className={`group h-96 flex flex-col justify-between shadow-2xl bg-[#FFFBF0]/5 rounded-lg transition-all duration-500 ease-in-out overflow-hidden
-                w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-9px)] lg:hover:w-[calc(50%-12px)]`}
+                w-[90%] sm:w-[calc(50%-12px)] lg:w-[calc(20%-9px)] lg:hover:w-[calc(50%-12px)]`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -25,7 +25,7 @@ function CardSectores({cardNumber, icon, title, items}: CardProps) {
                     <img 
                         src={icon} 
                         alt="" 
-                        className="h-24 w-auto filter drop-shadow-[0_0_10px_rgba(1,202,189,0.6)] group-hover:h-20 transition-all duration-300 ease-in-out"
+                        className="h-20 md:h-24 w-auto filter drop-shadow-[0_0_10px_rgba(1,202,189,0.6)] group-hover:h-20 transition-all duration-300 ease-in-out"
                     />
                 </div>
                 <ul className={`mt-40 transition-all duration-500 ease-in-out ${isHovered ? 'opacity-100 max-h-[200px]' : 'opacity-0 max-h-0'} overflow-hidden`}>

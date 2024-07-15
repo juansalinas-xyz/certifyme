@@ -18,7 +18,7 @@ function Sectores() {
       icon: "/home/sectores/educacion.png",
       title: "Educación",
       items: [
-        "Titulos académicos.",
+        "Títulos académicos.",
         "Certificados de cursos.",
         "Certificados de participación.",
       ],
@@ -26,7 +26,7 @@ function Sectores() {
     {
       cardNumber: 2,
       icon: "/home/sectores/logistica.png",
-      title: "Logistica",
+      title: "Logística",
       items: ["Certificados de origen.", "Registro de seguimiento."],
     },
     {
@@ -34,7 +34,7 @@ function Sectores() {
       icon: "/home/sectores/inmobiliaria.png",
       title: "Inmobiliaria",
       items: [
-        "Titulos de propiedad.",
+        "Títulos de propiedad.",
         "Certificados de inspección.",
         "Historiales de propiedad y transacciones.",
       ],
@@ -67,7 +67,7 @@ function Sectores() {
             </h2>
           </BoxReveal>
         </div>
-        <div className="w-full h-auto flex lg:flex lg:flex-row flex-col justify-between items-stretch md:items-center lg:items-stretch gap-6">
+        <div className="w-full h-auto flex lg:flex lg:flex-row flex-col justify-between items-center md:items-center lg:items-stretch gap-6">
           {cards.map((card) => (
             <CardSectores key={card.cardNumber} {...card} />
           ))}

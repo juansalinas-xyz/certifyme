@@ -142,7 +142,7 @@ function NavBar() {
                 onClick={() => setIsMenuOpen(false)}
               />
             </div>  
-            <div className="flex flex-col items-center justify-center h-full">
+            <div className="flex flex-col items-center justify-center h-full pb-16 md:pb-0">
               <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
