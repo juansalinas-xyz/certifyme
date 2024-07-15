@@ -48,58 +48,56 @@ function Certificate({params}: {params: {certificateId: string}}) {
   useEffect(() => {    
     const apiUrl = `/api/certifications/${params.certificateId}`;
 
-    // const fetchData = async () => {
-    //   try {
-    //     await axios.get<CertificateData>(apiUrl).then((response: any) => {
-    //       setData(response.data);
-    //       setTimeout(() => {
-    //         setLoading(false);
-    //       }, 1000);
-    //       console.log("DATA DEL ENDPOINT: ", response.data)
-    //       // UrlLinkedin = constructLinkedInUrl(response.data);
-    //       expirationDate = data?.expirationMonth + "/" + data?.expirationYear;
-    //     });
-    //   } catch (error) {
-    //     setError(error as Error);
-    //     setLoading(false);
-    //   }
-    // };
+    const fetchData = async () => {
+      try {
+        await axios.get<CertificateData>(apiUrl).then((response: any) => {
+          setData(response.data);
+          setLoading(false);
+          console.log("DATA DEL ENDPOINT: ", response.data)
+          UrlLinkedin = constructLinkedInUrl(response.data);
+          expirationDate = data?.expirationMonth + "/" + data?.expirationYear;
+        });
+      } catch (error) {
+        setError(error as Error);
+        setLoading(false);
+      }
+    };
 
-    // fetchData();
+    fetchData();
     setLoading(false);
   }, []);
 
-  // function constructLinkedInUrl(certificationData: CertificateData) {
-  //   const baseUrl = 'https://www.linkedin.com/profile/add';
-  //   const params = new URLSearchParams({
-  //     startTask: 'CERTIFICATION_NAME',
-  //     name: certificationData.title,
-  //     organizationId: certificationData.organizationId,
-  //     issueYear: certificationData.yearOfIssue.toString(),
-  //     issueMonth: certificationData.monthOfIssue.toString(),
-  //     expirationYear: certificationData.expirationYear.toString(),
-  //     expirationMonth: certificationData.expirationMonth.toString(),
-  //     certUrl: certificationData.certificado,
-  //     certId: certificationData.linkBlockchain,
-  //   });
+  function constructLinkedInUrl(certificationData: CertificateData) {
+    const baseUrl = 'https://www.linkedin.com/profile/add';
+    const params = new URLSearchParams({
+      startTask: 'CERTIFICATION_NAME',
+      name: certificationData.title,
+      organizationId: certificationData.organizationId,
+      issueYear: certificationData.yearOfIssue.toString(),
+      issueMonth: certificationData.monthOfIssue.toString(),
+      expirationYear: certificationData.expirationYear.toString(),
+      expirationMonth: certificationData.expirationMonth.toString(),
+      certUrl: certificationData.certificado,
+      certId: certificationData.linkBlockchain,
+    });
   
-  //   return `${baseUrl}?${params.toString()}`;
-  // }
+    return `${baseUrl}?${params.toString()}`;
+  }
 
   if (loading) return <div className="absolute w-screen h-screen flex flex-col justify-center items-center gap-10 overflow-hidden"><Fondo /><div className={styles.loader}></div><p className="text-center text-white font-bold text-xl">Estamos buscando tu certificado</p></div>
-  if (error) return <div>Error: {error.message}</div>
-  // if (!data) return <div>No data available</div>
+  if (error) return <div className="absolute w-screen h-screen flex flex-col justify-center items-center gap-10 overflow-hidden"><Fondo /><p className="text-center text-white font-bold text-xl">Ha ocurrido un error, intentalo nuevamente.</p></div>
+  if (!data) return <div className="absolute w-screen h-screen flex flex-col justify-center items-center gap-10 overflow-hidden"><Fondo /><p className="text-center text-white font-bold text-xl">No hay datos disponibles</p></div>
 
-  // let objCertificado: CertificadoProps = {
-  //   title: data.title,
-  //   description: data.description,
-  //   logoInstitucion: data.logoInstitucion,
-  //   institucionName: data.institucionName,
-  //   linkBlockchain: data.linkBlockchain,
-  //   certificado: data.certificado,
-  //   urlLinkedin: UrlLinkedin,
-  //   expirationDate: expirationDate,
-  // }
+  let objCertificado: CertificadoProps = {
+    title: data.title,
+    description: data.description,
+    logoInstitucion: data.logoInstitucion,
+    institucionName: data.institucionName,
+    linkBlockchain: data.linkBlockchain,
+    certificado: data.certificado,
+    urlLinkedin: UrlLinkedin,
+    expirationDate: expirationDate,
+  }
 
   let objCertificadoEjemplo: CertificadoProps = {
     title: "Certificado de Marketing Digital",
