@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "airtable": "^0.12.2",
     "framer-motion": "^11.3.0",
     "http-status-codes": "^2.3.0",
     "next": "14.2.4",
