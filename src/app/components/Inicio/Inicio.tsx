@@ -23,7 +23,7 @@ const Inicio = () => {
       className='w-screen h-[115vh] pb-[15vh] pt-20 -mb-10 flex flex-col justify-center items-center z-40 bg-cover bg-top bg-[url(/home/fondo5.jpg)]'
     >
       <div className='w-auto h-auto flex flex-col lg:flex-row justify-evenly items-center px-16'>
-        <div className='h-auto w-full lg:w-[35%] flex flex-col justify-center items-center lg:items-start gap-6 lg:gap-5 lg:px-0 text-white'>
+        <div className='h-auto w-full lg:w-[35%] flex flex-col justify-center items-center lg:items-start gap-6 lg:gap-10 lg:px-0 text-white'>
           <TextGenerateEffect
             duration={2}
             filter={false}
@@ -39,9 +39,14 @@ const Inicio = () => {
               className='w-[80vw] h-auto filter hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-300'
             />
           </div>
-          <p className='w-[90vw] lg:w-auto text-center lg:text-start text-[15px] lg:text-lg font-normal leading-normal z-[1005]'>
-            Garantiza la inmutabilidad y seguridad de tus certificados mediante tecnología blockchain.
-          </p>
+          <div className='w-auto h-auto flex flex-col gap-3'>
+            <p className='w-[90vw] lg:w-auto text-center lg:text-start text-[15px] lg:text-lg font-normal leading-normal z-[1005]'>
+              No más pérdida de documentos ni preocupaciones por falsificaciones.
+            </p>
+            <p className='w-[90vw] lg:w-auto text-center lg:text-start text-[15px] lg:text-lg font-normal leading-normal z-[1005]'>
+              Garantiza la inmutabilidad y seguridad de tus certificados mediante tecnología blockchain.
+            </p>
+          </div>
           <div className='flex w-full justify-center'>
             <button
               onClick={() => scrollToElement('contacto', 100)}
