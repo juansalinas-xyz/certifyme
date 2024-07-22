@@ -21,8 +21,8 @@ function Logo() {
   }, []);
 
   return (
-    <div className="z-[1000]">
-      <div className="w-screen lg:flex justify-start z-[102] hidden">
+    <div className="z-[100]">
+      <div className="w-full lg:flex justify-start z-[102] hidden">
         <Link href={"/"}>
           <Image
             src="/certify.png"
@@ -33,8 +33,7 @@ function Logo() {
           />
         </Link>
       </div>
-      <div className={`w-screen h-20 lg:hidden z-[100] flex items-center fixed ${isScrolled ? "bg-customBlackBackground/70 backdrop-blur-lg" : ""} transition-all duration-300`}
-      >
+      <div className={`w-screen h-20 lg:hidden z-[100] flex items-center fixed ${isScrolled ? "bg-customBlackBackground/70 backdrop-blur-lg" : ""} transition-all duration-300`}>
         <Link href={"/"}>
           <Image
             src="/certify.png"

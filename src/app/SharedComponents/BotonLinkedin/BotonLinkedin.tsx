@@ -32,7 +32,7 @@ function BotonLinkedin({ screenSize, url }: botonProps) {
       );
     case "medium":
       return (
-        <div className="lg:hidden hidden md:block">
+        <div className="lg:hidden hidden md:block -mt-10">
           <FadeInSection>
             <Link href={url} target="_blank">
               <div className="inline-flex h-12 shrink-0 justify-center items-center px-6 py-2.5 bg-customBlueLinkedin shadow-xl rounded-[40px] gap-2 cursor-pointer hover:shadow-none active:scale-[0.98] transition-all duration-500">

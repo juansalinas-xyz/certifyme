@@ -5,8 +5,8 @@ import axios from "axios";
 
 import styles from ".././certificate.module.css";
 
-import Fondo from "@/app/SharedComponents/Fondo/Fondo";
-import Logo from "@/app/SharedComponents/Logo/Logo";
+import Fondo from "@/SharedComponents/Fondo/Fondo";
+import Logo from "@/SharedComponents/Logo/Logo";
 import Informacion from "../components/Informacion/Informacion";
 import Certificado from "../components/Certificado/Certificado";
 import Tokenizer from "../components/Tokenizer/Tokenizer";

@@ -19,8 +19,8 @@ function BotonDrive({screenSize, url}: botonProps) {
                 <Image
                   src={"/certificate/drive.svg"}
                   alt={""}
-                  width={25}
-                  height={23}
+                  width={20}
+                  height={19}
                   className="group-hover:translate-x-[108px] group-hover:drop-shadow-xl transition-all duration-500 delay-75"
                 />
                 <p className="text-black text-center font-medium text-sm group-hover:opacity-0 group-hover:invisible transition-all duration-200 delay-75">
@@ -40,7 +40,7 @@ function BotonDrive({screenSize, url}: botonProps) {
                 <Image
                   src={"/certificate/drive.svg"}
                   alt={""}
-                  width={25}
+                  width={20}
                   height={23}
                   className="group-hover:translate-x-[108px] group-hover:drop-shadow-xl transition-all duration-500 delay-75"
                 />
