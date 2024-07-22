@@ -42,6 +42,7 @@ function NavBar() {
     { id: "inicio", text: "Inicio" },
     { id: "acercade", text: "¿Por qué Tokenizer?" },
     { id: "como", text: "¿Cómo lo hacemos?" },
+    { id: "precios", text: "Precios" },
     { id: "contacto", text: "Contacto" },
   ];
 
@@ -54,7 +55,7 @@ function NavBar() {
   return (
     <>
       <div
-        className={`fixed h-20 lg:h-[102px] w-screen flex justify-between items-center z-[100] px-7 lg:px-0 ${
+        className={`fixed h-20 lg:h-[102px] w-screen flex justify-between items-center z-[100] px-7 lg:px-0 overflow-hidden ${
           isScrolled
             ? "bg-customBlackBackground/50 md:bg-customBlackBackground/70 backdrop-blur-lg"
             : ""

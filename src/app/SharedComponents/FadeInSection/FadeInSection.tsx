@@ -29,7 +29,7 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({ children }) => {
 
   return (
     <div
-      className={`transition-opacity duration-1000 ${
+      className={`transition-opacity delay-0 duration-1000 ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       ref={domRef}

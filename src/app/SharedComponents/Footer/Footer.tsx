@@ -12,7 +12,7 @@ function Footer() {
         <p className="text-xs md:text-sm font-light text-center">
           © 2024 Tokenizer, todos los derechos reservados.
         </p>
-        <p className="text-xs md:text-sm font-light text-center">
+        {/* <p className="text-xs md:text-sm font-light text-center">
           Designed by{" "}
           <Link
             href={"https://www.linkedin.com/in/ivanrudiferia/"}
@@ -29,7 +29,7 @@ function Footer() {
           >
             Iannello
           </Link>
-        </p>
+        </p> */}
       </div>
     </div>
   );
