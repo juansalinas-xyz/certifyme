@@ -12,6 +12,7 @@ interface CertificadoProps {
   linkBlockchain: string;
   certificado: string;
   urlLinkedin: string;
+  urlDrive: string;
   expirationDate: string;
 }
 
@@ -22,6 +23,7 @@ function Certificado({
   linkBlockchain,
   certificado,
   urlLinkedin,
+  urlDrive,
   expirationDate
 }: CertificadoProps) {
   return (
@@ -67,11 +69,11 @@ function Certificado({
       {/* BOTON DE COMPARTIR EN LINKEDIN (Pantallas Pequeñas)*/}
       <BotonLinkedin screenSize={"small"} url={urlLinkedin} />
       {/* BOTON DE COMPARTIR EN GOOGLE DRIVE (Pantallas Pequeñas)*/}
-      <BotonDrive screenSize={"small"} url={urlLinkedin} /> {/* --------- Cambiar por url de DRIVE --------- */}
+      <BotonDrive screenSize={"small"} url={urlDrive} />
       {/* BOTON DE COMPARTIR EN LINKEDIN (Pantallas Medianas)*/}
       <BotonLinkedin screenSize={"medium"} url={urlLinkedin} />
       {/* BOTON DE COMPARTIR EN GOOGLE DRIVE (Pantallas Medianas)*/}
-      <BotonDrive screenSize={"medium"} url={urlLinkedin} /> {/* --------- Cambiar por url de DRIVE --------- */}
+      <BotonDrive screenSize={"medium"} url={urlDrive} />
     </div>
   );
 }

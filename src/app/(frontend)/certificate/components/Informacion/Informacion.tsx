@@ -13,6 +13,7 @@ interface CertificadoProps {
   linkBlockchain: string;
   certificado: string;
   urlLinkedin: string;
+  urlDrive: string;
 }
 
 function Informacion({
@@ -23,6 +24,7 @@ function Informacion({
   linkBlockchain,
   certificado,
   urlLinkedin,
+  urlDrive,
 }: CertificadoProps) {
   return (
     <FadeInSection>
@@ -90,7 +92,7 @@ function Informacion({
         {/* BOTON COMPARTIR EN LINKEDIN */}
         <BotonLinkedin screenSize={"large"} url={urlLinkedin} />
         {/* BOTON COMPARTIR EN GOOGLE DRIVE */}
-        <BotonDrive screenSize={"large"} url={urlLinkedin} /> {/* --------- Cambiar por url de DRIVE --------- */}
+        <BotonDrive screenSize={"large"} url={urlDrive} /> 
       </div>
     </FadeInSection>
   );

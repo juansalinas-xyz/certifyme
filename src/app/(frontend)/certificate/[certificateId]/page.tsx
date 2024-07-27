@@ -18,6 +18,7 @@ interface CertificateData {
   institucionName: string;
   linkBlockchain: string;
   certificado: string;
+  urlDrive: string;
   yearOfIssue: string;
   monthOfIssue: string;
   organizationId: string;
@@ -34,6 +35,7 @@ interface CertificadoProps {
   linkBlockchain: string;
   certificado: string;
   urlLinkedin: string;
+  urlDrive: string;
   expirationDate: string,
 }
 
@@ -96,6 +98,7 @@ function Certificate({params}: {params: {certificateId: string}}) {
     linkBlockchain: data.linkBlockchain,
     certificado: data.certificado,
     urlLinkedin: UrlLinkedin,
+    urlDrive: data.urlDrive,
     expirationDate: expirationDate,
   }
 
@@ -107,6 +110,7 @@ function Certificate({params}: {params: {certificateId: string}}) {
     linkBlockchain: "https://allo.info/asset/1794400153/nft/",
     certificado: "/pruebas/certificado.png",
     urlLinkedin: UrlLinkedin,
+    urlDrive: "",
     expirationDate: "12/2026",
   }
 
@@ -117,8 +121,8 @@ function Certificate({params}: {params: {certificateId: string}}) {
       <div id="contenido" className="w-full h-auto lg:h-screen flex justify-center items-center z-10 mt-16 lg:-mt-[41px] ">
         <div className="w-full lg:w-4/5 lg:h-full flex flex-col items-center justify-center lg:flex-row gap-7 lg:gap-28">
           {/* Cambiar por 'objCertificado' */}
-          <Informacion {...objCertificadoEjemplo} />
-          <Certificado {...objCertificadoEjemplo} />
+          <Informacion {...objCertificado} />
+          <Certificado {...objCertificado} />
         </div>
       </div>
       <Tokenizer />
