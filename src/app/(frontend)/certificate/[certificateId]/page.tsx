@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Image from "next/image";
 
 import styles from ".././certificate.module.css";
 
@@ -55,7 +56,6 @@ function Certificate({params}: {params: {certificateId: string}}) {
         await axios.get<CertificateData>(apiUrl).then((response: any) => {
           setData(response.data);
           setLoading(false);
-          console.log("DATA DEL ENDPOINT: ", response.data)
           UrlLinkedin = constructLinkedInUrl(response.data);
           expirationDate = data?.expirationMonth + "/" + data?.expirationYear;
         });
@@ -87,8 +87,8 @@ function Certificate({params}: {params: {certificateId: string}}) {
   }
 
   if (loading) return <div className="absolute w-screen h-screen flex flex-col justify-center items-center gap-10 overflow-hidden"><Fondo /><div className={styles.loader}></div><p className="text-center text-white font-bold text-xl">Estamos buscando tu certificado</p></div>
-  if (error) return <div className="absolute w-screen h-screen flex flex-col justify-center items-center gap-10 overflow-hidden"><Fondo /><p className="text-center text-white font-bold text-xl">Ha ocurrido un error, intentalo nuevamente.</p></div>
-  if (!data) return <div className="absolute w-screen h-screen flex flex-col justify-center items-center gap-10 overflow-hidden"><Fondo /><p className="text-center text-white font-bold text-xl">No hay datos disponibles</p></div>
+  if (error) return <div className="absolute w-screen h-screen flex flex-col justify-center items-center gap-10 overflow-hidden"><Fondo /><Image src={"/home/error.png"} alt={""} width={130} height={45} className="filter drop-shadow-[0_0_10px_rgba(1,202,189,0.6)]"/><p className="text-center text-white font-bold text-xl">Ha ocurrido un error, intentalo nuevamente.</p><p className="text-gray-400">Error: {error.message}</p></div>
+  if (!data) return <div className="absolute w-screen h-screen flex flex-col justify-center items-center gap-10 overflow-hidden"><Fondo /><Image src={"/home/error.png"} alt={""} width={130} height={45} className="filter drop-shadow-[0_0_10px_rgba(1,202,189,0.6)]"/><p className="text-center text-white font-bold text-xl">No hay datos disponibles</p></div>
 
   let objCertificado: CertificadoProps = {
     title: data.title,
