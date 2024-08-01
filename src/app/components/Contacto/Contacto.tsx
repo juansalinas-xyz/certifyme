@@ -4,7 +4,7 @@ import BoxReveal from '../BoxReveal/BoxReveal';
 
 function Contacto() {
   return (
-    <div id='contacto' className='p-10 w-[90%] flex flex-col items-center gap-8 lg:gap-20 text-white z-50 lg:mb-0 mb-16'>
+    <div id='contacto' className='p-10 w-[90%] flex flex-col items-center gap-8 lg:gap-20 text-white z-50 lg:mb-0 mb-0'>
       <BoxReveal>
         <h2 className='text-4xl font-bold text-white text-center'>Contáctanos</h2>
       </BoxReveal>
