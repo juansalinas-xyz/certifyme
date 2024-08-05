@@ -12,7 +12,7 @@ const Porque = () => {
     },
     {
       title: "Facilidad de uso",
-      text: "Tokenizer facilita la gestión y verificación de tus certificados si necesidad de conocimientos sobre blockchain ni wallets, encargándose de todo el proceso técnico por ti y tus usuarios."
+      text: "Tokenizer facilita la gestión y verificación de tus certificados sin necesidad de conocimientos sobre blockchain ni wallets, encargándose de todo el proceso técnico por ti y tus usuarios."
     },
     {
       title: "Integración y accesibilidad",

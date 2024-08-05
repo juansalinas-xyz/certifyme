@@ -27,7 +27,7 @@ const Potencia = () => {
         items: [
             'Evitar fraudes de diplomas.',
             'Marketing en redes sociales.',
-            'Status por vanguardia en tecnologia.'
+            'Estatus por vanguardia en tecnologia.'
         ],
         icon: '/home/potenciar/escuela.png'
     },
@@ -37,7 +37,7 @@ const Potencia = () => {
         items: [
             'Marketing en redes sociales (LinkedIn).',
             'Reconocimiento individual a los empleados.',
-            'Status por vanguardia en tecnologia.'
+            'Estatus por vanguardia en tecnologia.'
         ],
         icon: '/home/potenciar/empresa.png'
     },

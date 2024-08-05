@@ -1,6 +1,7 @@
 import React from 'react'
 import ContactMedium from '../ContactMedium/ContactMedium';
 import BoxReveal from '../BoxReveal/BoxReveal';
+import links from '@/contactos';
 
 function Contacto() {
   return (
@@ -16,13 +17,13 @@ function Contacto() {
       <div className='w-full md:w-2/3 h-auto flex justify-center items-center gap-8 lg:gap-12 text-white md:mt-0 mt-5'>
         <div className='mt-2 w-auto h-full flex flex-row justify-center lg:justify-start items-center gap-10'>
           {/* WhatsApp */}
-          <ContactMedium iconPath={'/home/whatsapp.png'} text={'WhatsApp'} />
+          <ContactMedium iconPath={'/home/whatsapp.png'} text={'WhatsApp'} link={links.whatsapp} />
           {/* Telegram */}
-          <ContactMedium iconPath={'/home/telegram.png'} text={'Telegram'} />
+          <ContactMedium iconPath={'/home/telegram.png'} text={'Telegram'} link={links.telegram} />
           {/* Correo */}
-          <ContactMedium iconPath={'/home/correo.png'} text={'E-mail'} />
+          <ContactMedium iconPath={'/home/correo.png'} text={'E-mail'} link={links.email} />
           {/* Linkedin */}
-          <ContactMedium iconPath={'/home/linkedin.png'} text={'LinkedIn'} />
+          <ContactMedium iconPath={'/home/linkedin.png'} text={'LinkedIn'} link={links.linkedin} />
         </div>
       </div>
     </div>

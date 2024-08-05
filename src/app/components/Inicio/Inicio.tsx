@@ -47,7 +47,7 @@ const Inicio = () => {
               Garantiza la inmutabilidad y seguridad de tus certificados mediante tecnología blockchain.
             </p>
           </div>
-          <div className='lg:hidden flex w-auto h-auto'>
+          <div className='lg:hidden flex w-[95vw] h-auto'>
             <p className='w-full text-center text-[15px] font-normal leading-normal z-[1005]'>
               No más pérdida de documentos ni preocupaciones por falsificaciones. Garantiza la inmutabilidad y seguridad de tus certificados mediante tecnología blockchain.
             </p>

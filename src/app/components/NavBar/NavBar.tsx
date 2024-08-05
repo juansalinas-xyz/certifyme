@@ -5,6 +5,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "src/app/SharedComponents/Footer/Footer";
+import links from "@/contactos";
 
 function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,9 +48,9 @@ function NavBar() {
   ];
 
   const socialIcons = [
-    { src: "/home/linkedin.png", alt: "LinkedIn" },
-    { src: "/home/whatsapp.png", alt: "WhatsApp" },
-    { src: "/home/telegram.png", alt: "Telegram" },
+    { src: "/home/linkedin.png", alt: "LinkedIn", link: links.linkedin },
+    { src: "/home/whatsapp.png", alt: "WhatsApp", link: links.whatsapp },
+    { src: "/home/telegram.png", alt: "Telegram", link: links.telegram },
   ];
 
   return (
@@ -80,9 +81,11 @@ function NavBar() {
             height={30}
             width={30}
             className={`z-50 cursor-pointer ${isMenuOpen ? "hidden" : "block"}`}
-            onClick={() => setTimeout(() => {
-              setIsMenuOpen(!isMenuOpen)
-            }, 100)}
+            onClick={() =>
+              setTimeout(() => {
+                setIsMenuOpen(!isMenuOpen);
+              }, 100)
+            }
           />
         </div>
 
@@ -100,14 +103,16 @@ function NavBar() {
 
         <div className="hidden right-0 mr-20 lg:flex justify-center gap-2.5 z-50">
           {socialIcons.map((icon, index) => (
-            <Image
-              key={index}
-              src={icon.src}
-              alt={icon.alt}
-              height={24}
-              width={24}
-              className="cursor-pointer filter hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-300"
-            />
+            <Link href={icon.link} >
+              <Image
+                key={index}
+                src={icon.src}
+                alt={icon.alt}
+                height={24}
+                width={24}
+                className="cursor-pointer filter hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-300"
+              />
+            </Link>
           ))}
         </div>
       </div>
@@ -134,15 +139,15 @@ function NavBar() {
               </Link>
             </div>
             <div className="absolute top-8 right-8 z-[1000]">
-              <Image 
-                src={'/home/close.png'} 
-                alt={'Close menu'} 
-                height={15} 
-                width={15} 
-                className='cursor-pointer filter drop-shadow-[0_0_10px_rgba(1,202,189,0.5)]'
+              <Image
+                src={"/home/close.png"}
+                alt={"Close menu"}
+                height={15}
+                width={15}
+                className="cursor-pointer filter drop-shadow-[0_0_10px_rgba(1,202,189,0.5)]"
                 onClick={() => setIsMenuOpen(false)}
               />
-            </div>  
+            </div>
             <div className="flex flex-col items-center justify-center h-full pb-16 md:pb-0">
               <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
@@ -176,13 +181,15 @@ function NavBar() {
                     whileHover={{ scale: 1.2, rotate: 360 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Image
-                      src={icon.src}
-                      alt={icon.alt}
-                      height={32}
-                      width={32}
-                      className="cursor-pointer filter drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-300"
-                    />
+                    <Link href={icon.link}>
+                      <Image
+                        src={icon.src}
+                        alt={icon.alt}
+                        height={32}
+                        width={32}
+                        className="cursor-pointer filter drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-300"
+                      />
+                    </Link>
                   </motion.div>
                 ))}
               </motion.div>
