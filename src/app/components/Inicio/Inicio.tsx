@@ -36,7 +36,7 @@ const Inicio = () => {
               alt='Certificados'
               width={2572}
               height={1843}
-              className='w-[80vw] h-auto filter hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-300'
+              className='w-[80vw] h-auto filter hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-300 origin-top'
             />
           </div>
           <div className='hidden lg:flex w-auto h-auto flex-col gap-3'>
