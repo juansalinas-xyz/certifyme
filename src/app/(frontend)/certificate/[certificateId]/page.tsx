@@ -120,7 +120,6 @@ function Certificate({params}: {params: {certificateId: string}}) {
       <Logo />
       <div id="contenido" className="w-full h-auto lg:h-screen flex justify-center items-center z-10 mt-16 lg:-mt-[41px] ">
         <div className="w-full lg:w-4/5 lg:h-full flex flex-col items-center justify-center lg:flex-row gap-7 lg:gap-28">
-          {/* Cambiar por 'objCertificado' */}
           <Informacion {...objCertificado} />
           <Certificado {...objCertificado} />
         </div>
