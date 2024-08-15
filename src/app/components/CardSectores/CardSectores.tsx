@@ -14,12 +14,12 @@ function CardSectores({cardNumber, icon, title, items}: CardProps) {
 
     return (
         <div
-            className={`group h-96 flex flex-col justify-between shadow-2xl bg-[#FFFBF0]/5 rounded-lg transition-all duration-500 ease-in-out overflow-hidden
-                w-[90%] sm:w-[calc(50%-12px)] lg:w-[calc(20%-9px)] lg:hover:w-[calc(50%-12px)]`}
+            className={`group md:h-96 flex flex-col justify-between shadow-2xl bg-[#FFFBF0]/5 rounded-lg transition-all duration-500 ease-in-out overflow-hidden
+                w-[100%] sm:w-[calc(50%-12px)] md:w-[calc(33%-9px)] md:hover:w-[calc(80%-12px)]`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div className="w-full h-full flex flex-col items-center relative p-4">
+            <div className="w-full h-full flex flex-col items-center relative p-7">
                 <div className={`absolute transition-all duration-500 ease-in-out
                     ${isHovered ? "top-10" : "top-1/2 -translate-y-1/2"}`}>
                     <img 
@@ -28,9 +28,9 @@ function CardSectores({cardNumber, icon, title, items}: CardProps) {
                         className="h-20 md:h-24 w-auto filter drop-shadow-[0_0_10px_rgba(1,202,189,0.6)] group-hover:h-20 transition-all duration-300 ease-in-out"
                     />
                 </div>
-                <ul className={`mt-40 transition-all duration-500 ease-in-out ${isHovered ? 'opacity-100 max-h-[200px]' : 'opacity-0 max-h-0'} overflow-hidden`}>
+                <ul className={`mt-40 mb-10 md:mb-0 transition-all duration-500 ease-in-out ${isHovered ? 'opacity-100 max-h-[200px]' : 'opacity-0 max-h-0'} overflow-hidden`}>
                     {items.map((item, index) => (
-                        <li key={index} className="text-white text-base mb-2 flex flex-row gap-1.5">
+                        <li key={index} className="text-white text-sm md:text-base mb-2 flex flex-row gap-1.5">
                             <span className="text-customCeleste filter drop-shadow-[0_0_10px_rgba(1,202,189,0.6)] flex-shrink-0">•</span>
                             <span className="flex-grow">{item}</span>
                         </li>
