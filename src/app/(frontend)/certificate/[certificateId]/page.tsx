@@ -45,7 +45,7 @@ function Certificate({params}: {params: {certificateId: string}}) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
-  let UrlLinkedin: string = "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Nombre-de-ejemplo&organizationId=2024&issueYear=2023&issueMonth=6&expirationYear=2026&expirationMonth=8&certUrl=https://allo.info/asset/1794400153/nft&certId= 1";
+  let UrlLinkedin!: string;
   let expirationDate!: string;
 
   useEffect(() => {    
@@ -55,6 +55,7 @@ function Certificate({params}: {params: {certificateId: string}}) {
       try {
         await axios.get<CertificateData>(apiUrl).then((response: any) => {
           setData(response.data);
+          console.log(response.data);
           setLoading(false);
           UrlLinkedin = constructLinkedInUrl(response.data);
           expirationDate = data?.expirationMonth + "/" + data?.expirationYear;
@@ -100,18 +101,6 @@ function Certificate({params}: {params: {certificateId: string}}) {
     urlLinkedin: UrlLinkedin,
     urlDrive: data.urlDrive,
     expirationDate: expirationDate,
-  }
-
-  let objCertificadoEjemplo: CertificadoProps = {
-    title: "Certificado de Marketing Digital",
-    description: " Este certificado es prueba de haber completado el curso de marketing digital",
-    logoInstitucion: "/pruebas/logo.png",
-    institucionName: "Google",
-    linkBlockchain: "https://allo.info/asset/1794400153/nft/",
-    certificado: "/pruebas/certificado.png",
-    urlLinkedin: UrlLinkedin,
-    urlDrive: "",
-    expirationDate: "12/2026",
   }
 
   return (
