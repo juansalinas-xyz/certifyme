@@ -22,7 +22,7 @@ function Logo() {
 
   return (
     <div className="z-[100]">
-      <div className="w-full lg:flex justify-start z-[102] hidden">
+      <div className="w-screen lg:flex justify-start z-[102] hidden">
         <Link href={"/"}>
           <Image
             src="/certify.png"

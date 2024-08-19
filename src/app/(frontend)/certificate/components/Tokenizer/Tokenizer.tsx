@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import FadeInSection from "@/SharedComponents/FadeInSection/FadeInSection";
+import links from "@/contactos";
 
 function Tokenizer() {
   return (
@@ -28,24 +29,50 @@ function Tokenizer() {
             siempre <b>protegidos</b> y <b>accesibles</b>.
           </p>
         </div>
-        <div className="w-full flex flex-row justify-center gap-[10px]">
+        <div className="w-full flex flex-row justify-center gap-6 z-[1000]">
           <Link href={"/"} target="_blank">
-            <Image src={"/certificate/web.png"} alt={""} height={30} width={30} />
-          </Link>
-          <Link href={"https://www.linkedin.com"} target="_blank">
             <Image
-              src={"/certificate/linkedin.png"}
+              src={"/home/web.png"}
               alt={""}
               height={30}
               width={30}
+              className="lg:scale-125"
             />
           </Link>
-          <Link href={"mailto:correo@example.com"} target="_blank">
+          <Link href={links.whatsapp} target="_blank">
             <Image
-              src={"/certificate/correo.png"}
+              src={"/home/whatsapp.png"}
               alt={""}
               height={30}
               width={30}
+              className="lg:scale-125"
+            />
+          </Link>
+          <Link href={links.telegram} target="_blank">
+            <Image
+              src={"/home/telegram.png"}
+              alt={""}
+              height={30}
+              width={30}
+              className="lg:scale-125"
+            />
+          </Link>
+          <Link href={links.email} target="_blank">
+            <Image
+              src={"/home/correo.png"}
+              alt={""}
+              height={30}
+              width={30}
+              className="lg:scale-125"
+            />
+          </Link>
+          <Link href={links.linkedin} target="_blank">
+            <Image
+              src={"/home/linkedin.png"}
+              alt={""}
+              height={30}
+              width={30}
+              className="lg:scale-125"
             />
           </Link>
         </div>
