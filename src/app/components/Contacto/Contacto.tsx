@@ -1,27 +1,29 @@
 import React from 'react'
-import ContactForm from '../ContactForm/ContactForm';
 import ContactMedium from '../ContactMedium/ContactMedium';
 import BoxReveal from '../BoxReveal/BoxReveal';
+import links from '@/contactos';
 
 function Contacto() {
   return (
-    <div id='contacto' className='p-10 w-[90%] flex flex-col items-center gap-5 text-white z-50'>
+    <div id='contacto' className='p-10 w-[90%] flex flex-col items-center gap-8 lg:gap-20 text-white z-50 lg:mb-0 mb-0'>
       <BoxReveal>
-        <h2 className='text-4xl font-semibold text-white text-center'>Contáctanos</h2>
+        <h2 className='text-4xl font-bold text-white text-center'>Contáctanos</h2>
       </BoxReveal>
-      <div className='w-full md:w-2/3 h-auto flex flex-col-reverse lg:flex-row justify-center items-center gap-8 lg:gap-12 text-white mt-10'>
-        {/* Contact Form */}
-        <div className='w-full h-full flex justify-end items-center'>
-          <ContactForm />
+      <BoxReveal>
+        <div className='w-full flex justify-center'>
+          <p className='text-sm md:text-xl font-medium text-white text-center w-full lg:w-2/3'>Contactános para obtener más información sobre nuestros servicios y sus ventajas. Estamos para responder tus preguntas y brindarte toda la información que necesitas.</p>
         </div>
-        <p className='text-base font-light'>Ó</p>
-        <div className='mt-2 w-full h-full flex flex-row lg:flex-col justify-center lg:justify-start items-start gap-10'>
+      </BoxReveal>
+      <div className='w-full md:w-2/3 h-auto flex justify-center items-center gap-8 lg:gap-12 text-white md:mt-0 mt-5'>
+        <div className='mt-2 w-auto h-full flex flex-row justify-center lg:justify-start items-center gap-10'>
           {/* WhatsApp */}
-          <ContactMedium iconPath={'/home/whatsapp.png'} text={'Envianos un WhatsApp'} />
+          <ContactMedium iconPath={'/home/whatsapp.png'} text={'WhatsApp'} link={links.whatsapp} />
           {/* Telegram */}
-          <ContactMedium iconPath={'/home/telegram.png'} text={'Contáctanos por Telegram'} />
+          <ContactMedium iconPath={'/home/telegram.png'} text={'Telegram'} link={links.telegram} />
           {/* Correo */}
-          <ContactMedium iconPath={'/home/correo.png'} text={'Contactanos por correo'} />
+          <ContactMedium iconPath={'/home/correo.png'} text={'E-mail'} link={links.email} />
+          {/* Linkedin */}
+          <ContactMedium iconPath={'/home/linkedin.png'} text={'LinkedIn'} link={links.linkedin} />
         </div>
       </div>
     </div>

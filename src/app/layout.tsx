@@ -20,6 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-x-hidden bg-customBlackBackground">
+      <link rel="icon" href="/favicon.png" />
       <body className={montserrat.className}>{children}</body>
     </html>
   );

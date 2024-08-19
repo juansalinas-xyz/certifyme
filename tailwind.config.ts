@@ -13,7 +13,8 @@ const config: Config = {
         customBlackBackground: '#0E0E0E',
         customBlueLinkedin: '#0A66C2',
         customCeleste: '#01CABD',
-        customGris: '#F9F6EE'
+        customGris: '#F9F6EE',
+        customBlueFondo: '#1C248B'
       },
     },
   },
