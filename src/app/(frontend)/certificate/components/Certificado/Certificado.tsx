@@ -5,26 +5,21 @@ import FadeInSection from "@/SharedComponents/FadeInSection/FadeInSection";
 import BotonDrive from "@/SharedComponents/BotonDrive/BotonDrive";
 import BotonLinkedin from "@/SharedComponents/BotonLinkedin/BotonLinkedin";
 
+
 interface CertificadoProps {
-  title: string;
-  description: string;
-  logoInstitucion: string;
-  linkBlockchain: string;
-  certificado: string;
-  urlLinkedin: string;
-  urlDrive: string;
-  expirationDate: string;
+  blockchain_explorer_url: string;
+  image_url: string;
+  url_linkedin: string;
+  url_drive: string;
+  expiration_date: string,
 }
 
 function Certificado({
-  title,
-  description,
-  logoInstitucion,
-  linkBlockchain,
-  certificado,
-  urlLinkedin,
-  urlDrive,
-  expirationDate
+  blockchain_explorer_url,
+  image_url,
+  url_linkedin,
+  url_drive,
+  expiration_date
 }: CertificadoProps) {
   return (
     <div className="w-full lg:w-auto lg:h-auto flex flex-col justify-center items-center gap-7 lg:gap-5">
@@ -33,7 +28,7 @@ function Certificado({
         <FadeInSection>
           <div className="w-full flex justify-center lg:justify-start items-center lg:items-start">
             <Image
-              src={certificado}
+              src={image_url}
               alt={""}
               height={400}
               width={751}
@@ -51,11 +46,11 @@ function Certificado({
             <FadeInSection>Verificación: </FadeInSection>
           </p>
           <Link
-            href={linkBlockchain}
+            href={blockchain_explorer_url}
             target="_blank"
             className="text-white text-center text-[10px] md:text-sm font-medium hover:underline"
           >
-            <FadeInSection>{linkBlockchain}</FadeInSection>
+            <FadeInSection>{blockchain_explorer_url}</FadeInSection>
           </Link>
         </div>
         {/* VALIDEZ */}
@@ -63,17 +58,17 @@ function Certificado({
           <p className="text-white text-center text-[10px] md:text-sm font-normal">
             <FadeInSection>Válido hasta: </FadeInSection>
           </p>
-          <FadeInSection><p className="text-white text-center text-[10px] md:text-sm font-medium">{expirationDate}</p></FadeInSection>
+          <FadeInSection><p className="text-white text-center text-[10px] md:text-sm font-medium">{expiration_date}</p></FadeInSection>
         </div>
       </div>
       {/* BOTON DE COMPARTIR EN LINKEDIN (Pantallas Pequeñas)*/}
-      <BotonLinkedin screenSize={"small"} url={urlLinkedin} />
+      <BotonLinkedin screenSize={"small"} url={url_linkedin} />
       {/* BOTON DE COMPARTIR EN GOOGLE DRIVE (Pantallas Pequeñas)*/}
-      <BotonDrive screenSize={"small"} url={urlDrive} />
+      <BotonDrive screenSize={"small"} url={url_drive} />
       {/* BOTON DE COMPARTIR EN LINKEDIN (Pantallas Medianas)*/}
-      <BotonLinkedin screenSize={"medium"} url={urlLinkedin} />
+      <BotonLinkedin screenSize={"medium"} url={url_linkedin} />
       {/* BOTON DE COMPARTIR EN GOOGLE DRIVE (Pantallas Medianas)*/}
-      <BotonDrive screenSize={"medium"} url={urlDrive} />
+      <BotonDrive screenSize={"medium"} url={url_drive} />
     </div>
   );
 }
