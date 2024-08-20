@@ -42,9 +42,9 @@ function Certificado({
       <div className="w-full flex flex-col items-center gap-2 ">
         {/* LINK DE VERIFICACION EN BLOCKCHAIN */}
         <div className="w-full flex flex-row justify-center gap-1.5 -mt-1 lg:-mt-0">
-          <p className="text-white text-center text-[10px] md:text-sm font-normal">
+          <div className="text-white text-center text-[10px] md:text-sm font-normal">
             <FadeInSection>Verificación: </FadeInSection>
-          </p>
+          </div>
           <Link
             href={blockchain_explorer_url}
             target="_blank"
@@ -55,9 +55,9 @@ function Certificado({
         </div>
         {/* VALIDEZ */}
         <div className="w-full flex flex-row justify-center gap-1.5 -mt-1 lg:-mt-0">
-          <p className="text-white text-center text-[10px] md:text-sm font-normal">
+          <div className="text-white text-center text-[10px] md:text-sm font-normal">
             <FadeInSection>Válido hasta: </FadeInSection>
-          </p>
+          </div>
           <FadeInSection><p className="text-white text-center text-[10px] md:text-sm font-medium">{expiration_date}</p></FadeInSection>
         </div>
       </div>

@@ -42,9 +42,8 @@ function Certificate({params}: {params: {certificateId: string}}) {
   const [data, setData] = useState<CertificateData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
-
-  let UrlLinkedin!: string;
-  let expirationDate!: string;
+  const [UrlLinkedin, setUrlLinkedin] = useState("");
+  const [expirationDate, setExpirationDate] = useState("");
 
   useEffect(() => {    
     const apiUrl = `/api/certifications/${params.certificateId}`;
@@ -54,8 +53,9 @@ function Certificate({params}: {params: {certificateId: string}}) {
         await axios.get<CertificateData>(apiUrl).then((response: any) => {
           setData(response.data.fields);
           setLoading(false);
-          UrlLinkedin = constructLinkedInUrl(response.data.fields);
-          expirationDate = data?.expiration_month + "/" + data?.expiration_year;
+          setUrlLinkedin(constructLinkedInUrl(response.data.fields));
+          setExpirationDate(response.data.fields.expiration_month + "/" + response.data.fields.expiration_year);
+          setLoading(false);
         });
       } catch (error) {
         setError(error as Error);
@@ -64,7 +64,6 @@ function Certificate({params}: {params: {certificateId: string}}) {
     };
 
     fetchData();
-    setLoading(false);
   }, []);
 
   function constructLinkedInUrl(certification_data: CertificateData) {
