@@ -22,8 +22,8 @@ interface CertificateData {
   url_drive: string;
   issue_year: string;
   issue_month: string;
-  expiration_year: number;
-  expiration_month: number;
+  expiration_year: string;
+  expiration_month: string;
 }
 
 interface CertificadoProps {
@@ -38,7 +38,7 @@ interface CertificadoProps {
   expiration_date: string,
 }
 
-function Certificate({params}: {params: {certificate_id: string}}) {  
+function Certificate({params}: {params: {certificateId: string}}) {  
   const [data, setData] = useState<CertificateData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -47,15 +47,14 @@ function Certificate({params}: {params: {certificate_id: string}}) {
   let expirationDate!: string;
 
   useEffect(() => {    
-    const apiUrl = `/api/certifications/${params.certificate_id}`;
+    const apiUrl = `/api/certifications/${params.certificateId}`;
 
     const fetchData = async () => {
       try {
         await axios.get<CertificateData>(apiUrl).then((response: any) => {
-          setData(response.data);
-          console.log(response.data);
+          setData(response.data.fields);
           setLoading(false);
-          UrlLinkedin = constructLinkedInUrl(response.data);
+          UrlLinkedin = constructLinkedInUrl(response.data.fields);
           expirationDate = data?.expiration_month + "/" + data?.expiration_year;
         });
       } catch (error) {
@@ -73,12 +72,12 @@ function Certificate({params}: {params: {certificate_id: string}}) {
     const parametros = new URLSearchParams({
       startTask: 'CERTIFICATION_NAME',
       name: certification_data.heading,
-      issueYear: certification_data.issue_year.toString(),
-      issueMonth: certification_data.issue_month.toString(),
-      expirationYear: certification_data.expiration_year.toString(),
-      expirationMonth: certification_data.expiration_month.toString(),
+      issueYear: certification_data.issue_year,
+      issueMonth: certification_data.issue_month,
+      expirationYear: certification_data.expiration_year,
+      expirationMonth: certification_data.expiration_month,
       certUrl: certification_data.image_url,
-      certId: params.certificate_id,
+      certId: params.certificateId,
     });
   
     return `${baseUrl}?${parametros.toString()}`;
