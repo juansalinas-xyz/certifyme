@@ -13,6 +13,8 @@ import Certificado from "../components/Certificado/Certificado";
 import Tokenizer from "../components/Tokenizer/Tokenizer";
 
 interface CertificateData {
+  id: string;
+  linkedin_organization_id: string; 
   heading: string;
   detail: string;
   institution_logo: string;
@@ -70,15 +72,18 @@ function Certificate({params}: {params: {certificateId: string}}) {
     const baseUrl = 'https://www.linkedin.com/profile/add';
     const parametros = new URLSearchParams({
       startTask: 'CERTIFICATION_NAME',
+      organizationId: certification_data.linkedin_organization_id,
       name: certification_data.heading,
       issueYear: certification_data.issue_year,
       issueMonth: certification_data.issue_month,
       expirationYear: certification_data.expiration_year,
       expirationMonth: certification_data.expiration_month,
-      certUrl: certification_data.image_url,
+      certUrl: 'https://www.tokenizer.tech/certificate/'+params.certificateId,
       certId: params.certificateId,
     });
   
+    console.log(`${baseUrl}?${parametros.toString()}`)
+
     return `${baseUrl}?${parametros.toString()}`;
   }
 

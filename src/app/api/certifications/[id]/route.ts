@@ -9,10 +9,17 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     const id = params.id;
     try {
         const record = await base('certificates').find(id);
+        const fields = { ...record.fields };
+        if (fields.image_url) {
+            fields.image_url =  fields.image_url[0].url
+        }
+        if (fields.institution_logo) {
+            fields.institution_logo =  fields.institution_logo[0].url
+        }
         const response = {
             id: record.id,
             createdTime: record._rawJson.createdTime,
-            fields: record.fields,
+            fields: fields,
         };
         return NextResponse.json(response);
     } catch (error) {
